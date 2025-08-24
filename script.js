@@ -1,6 +1,7 @@
 const input = document.querySelector("#input-box");
 const button = document.querySelector("#addButton");
 const list = document.querySelector("#list");
+const clear=document.querySelector("#btn-clear");
 
 let luminance;
 // random color is generated
@@ -120,4 +121,11 @@ list.addEventListener("click", function (event) {
         const li = event.target.closest("li");
         li.classList.toggle("line-through");
     }
+});
+clear.addEventListener("click" , function(e)
+{
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+    localStorage.clear();
 });
